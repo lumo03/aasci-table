@@ -13,7 +13,7 @@ public class Main {
         // create an object of window class
         Window table = new Window();
 
-        // create text variable for the label
+        // create text variable for the textArea
         String text = "";
 
         //  print the header
@@ -29,7 +29,7 @@ public class Main {
             text += Print.writeRow(c);
         }
 
-        // set the text of the label
-        table.setLabel(text);
+        // set the text of the textArea
+        table.setTextArea(text);
     }
 }

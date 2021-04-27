@@ -4,42 +4,45 @@ import java.awt.*;
 //create a window to show the table
 public class Window extends JFrame {
 
-    // Textfeld erstellen
-    JTextArea label;
+    // create/declare textArea
+    JTextArea textArea;
     public Window() {
 
-        // Schließen mit "x"
+        // close with "x"
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Titel setzen
+        // set title
         setTitle("ASCII-Table");
 
-        // Fenstergrosse einstellen
+        // set window size
         setSize(1425,620);
 
-        // Fenster mittig positionieren
+        // show window in the middle of the screen
         setLocationRelativeTo(null);
 
-        // Label intialisieren
-        label = new JTextArea("Loading...");
+        // initialize textArea
+        textArea = new JTextArea("Loading...");
 
-        // Schrift anpassen
-        label.setFont(new Font("Courier New",Font.PLAIN,14));
+        // prevent edits
+        textArea.setEditable(false);
 
-        // Label zum Frame hinzufuegen
-        add(label);
+        // change font
+        textArea.setFont(new Font("Courier New",Font.PLAIN,14));
 
-        // Frame sichtbar machen
+        // add textArea to frame
+        add(textArea);
+
+        // make frame visible
         setVisible(true);
     }
 
-    // method for getting the label
-    public JTextArea getLabel() {
-        return label;
+    // method to get the text of the textArea
+    public String getTextArea() {
+        return textArea.getText();
     }
 
-    // method for setting the label
-    public void setLabel(String text) {
-        label.setText(text);
+    // method to set the text of the textArea
+    public void setTextArea(String text) {
+        textArea.setText(text);
     }
 }
