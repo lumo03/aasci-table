@@ -16,7 +16,7 @@ public class Print {
            out += h;
            out += "     ";
            if (i < 3) {
-               out += "|      ";
+               out += "┃      ";
            }
         }
         // spacing right
@@ -24,7 +24,17 @@ public class Print {
         // next line
         out += "\n";
         // print line under the header
-        out += "-".repeat(178);
+        //old cmd: out += "-".repeat(178);
+        for (int i = 0; i < 3; i++) {
+            if (i == 0) {
+                out += "━".repeat(43);
+                out += "╋";
+            } else {
+                out += "━".repeat(44);
+                out += "╋";
+            }
+        }
+        out += "━".repeat(44);
         // next line
         out += "\n";
         return out;
@@ -43,7 +53,7 @@ public class Print {
         for (int i = 0; i < 4; i++) {
             out += writeChar(cA[i]);
             if (i < 3) {
-                out += "|      ";
+                out += "┃      ";
             }
         }
 
